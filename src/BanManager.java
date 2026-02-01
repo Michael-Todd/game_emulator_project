@@ -14,7 +14,7 @@ public class BanManager { //class meant to group players together and determine 
 
         for (int i=0; i<TEAM_SIZE; i++) {
             playerList2[i] = new Player(i+1);
-        } //this block represents the loading of players into teams
+        } //this block represents the loading of Players into teams
 
 
         for (int i=0; i<TEAM_SIZE; i++) {
@@ -23,7 +23,7 @@ public class BanManager { //class meant to group players together and determine 
 
         for (int i=0; i<TEAM_SIZE; i++) {
             picks2[i] = new Pick(playerList2[i].banCharacter(), playerList2[i].getPickOrder());
-        }
+        } //this block represents Players choosing their Character to ban, storing them along with their selection order
     
     }
 }
