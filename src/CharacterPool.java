@@ -8,10 +8,9 @@ public class CharacterPool {
         "char9", "char10", "char11", "char12"
     };
 
-    private Random rand = new Random();
+    private static Random rand = new Random();
 
-    //chosen to be nonstatic in case future me wishes to work with multiple character pools
-    public Character getCharacter() {
+    public static Character getCharacter() {
 
         String name = CHARACTERS[rand.nextInt(CHARACTERS.length)];
         return new Character(name);
