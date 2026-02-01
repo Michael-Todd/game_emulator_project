@@ -3,14 +3,16 @@ public class Player {
     private Character bannedCharacter;
 
     public Player(int pickOrder) {
-        
+
         this.pickOrder = pickOrder;
     }
 
 
-    public void banCharacter(Character character) {
+    public Character banCharacter() {
 
-        this.bannedCharacter = character;
+
+        this.bannedCharacter = CharacterPool.getCharacter();
+        return bannedCharacter;
     }
 
     
