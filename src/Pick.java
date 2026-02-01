@@ -1,1 +1,1 @@
-public record Pick(Character character, int pickOrder) {s}
+public record Pick(Character character, int pickOrder) {}
