@@ -1,0 +1,1 @@
+public record Pick(Character character, int pickOrder) {s}
