@@ -2,8 +2,9 @@ public class Player {
     private int pickOrder;
     private Character bannedCharacter;
 
-    public Player(int pickOrder) {
-
+    public Player(Character bannedCharacter, int pickOrder) {
+        
+        this.bannedCharacter = bannedCharacter;
         this.pickOrder = pickOrder;
     }
 
