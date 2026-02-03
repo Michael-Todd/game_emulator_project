@@ -2,17 +2,17 @@ import java.util.Random;
 
 public class CharacterPool {
     
-    private static final String[] CHARACTERS = {
-        "char1", "char2", "char3", "char4",
-        "char5", "char6", "char7", "char8",
-        "char9", "char10", "char11", "char12"
+    private static final Character[] CHARACTERS = {
+        new Character("char1"), new Character("char2"), new Character("char3"), new Character("char4"),
+        new Character("char5"), new Character("char6"), new Character("char7"), new Character("char8"),
+        new Character("char9"), new Character("char10"), new Character("char11"), new Character("char12")
     };
 
     private static Random rand = new Random();
 
     public static Character getCharacter() {
 
-        String name = CHARACTERS[rand.nextInt(CHARACTERS.length)];
-        return new Character(name);
+        Character character = CHARACTERS[rand.nextInt(CHARACTERS.length)];
+        return character;
     }
 }
