@@ -1,4 +1,4 @@
-public class BanManager { //class meant to group players together and determine bans
+public class TeamBuilder { //class meant to group players together and determine ban votes
     private static final int TEAM_SIZE = 5;
     
     private Player[] playerList1 = new Player[TEAM_SIZE];
@@ -6,9 +6,9 @@ public class BanManager { //class meant to group players together and determine 
     private Pick[] picks1 = new Pick[TEAM_SIZE];
     private Pick[] picks2 = new Pick[TEAM_SIZE];
 
-    public BanManager() {
+    public TeamBuilder() {
 
-        System.out.println("BanManager running..");
+        System.out.println("TeamBuilder running..");
 
         for (int i=0; i<TEAM_SIZE; i++) {
             playerList1[i] = new Player(i+1);
@@ -24,6 +24,14 @@ public class BanManager { //class meant to group players together and determine 
             picks[i] = new Pick(playerList[i].banCharacter(), playerList[i].getPickOrder());
         }
     } //to fill picks1 and picks2 using the Players from playerList1 and playerList2 and the instance method banCharacter
+
+    public Pick[] getTeam1() {
+        return picks1;
+    }
+
+    public Pick[] getTeam2() {
+        return picks2;
+    }
 }
 
 //note: through this design, the pick order is available through the array, so in that regard Player need not have a field for order (Pick[] arrays store their order)
