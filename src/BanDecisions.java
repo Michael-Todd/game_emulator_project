@@ -3,8 +3,6 @@ import java.util.*;
 public class BanDecisions {//responsible for using Pick[] teams accessed from TeamBuilder object to determine which Characters are banned and displaying said bans
     private HashMap<Character, Integer> teamVotes1 = new HashMap<>(); //banned Character, number of votes for team1
     private HashMap<Character, Integer> teamVotes2 = new HashMap<>(); //banned Character, number of votes for team2
-    private Integer max;
-    private Character maxCharacter;
     private Set<Character> bannedCharacters = new LinkedHashSet<>(); //chosen over ArrayList to prevent duplicates
 
     
@@ -31,8 +29,8 @@ public class BanDecisions {//responsible for using Pick[] teams accessed from Te
     }
 
     private void findTeamBans(HashMap<Character, Integer> teamVotes) {
-        max = 0;
-        maxCharacter = null;
+        Integer max = 0;
+        Character maxCharacter = null;
         for (Map.Entry<Character, Integer> entry: teamVotes.entrySet()) {
             Character key = entry.getKey();
             Integer value = entry.getValue();
