@@ -6,27 +6,30 @@ public class TeamBuilder { //class "makes players", groups players together and 
     private Pick[] picks1 = new Pick[TEAM_SIZE];
     private Pick[] picks2 = new Pick[TEAM_SIZE];
 
-    
+
     public TeamBuilder() {
 
-        System.out.println("TeamBuilder running..");
+        System.out.println("TeamBuilder running.."); //TODO: remove when done testing
 
-        for (int i=0; i<TEAM_SIZE; i++) {
-            playerList1[i] = new Player(i+1);
-            playerList2[i] = new Player(i+1);
-        }
+        makeTeam();
 
         populatePicks(playerList1, picks1);
         populatePicks(playerList2, picks2);
     }
 
+    
+    private void makeTeam() {
+        for (int i=0; i<TEAM_SIZE; i++) {
+            playerList1[i] = new Player(i+1);
+            playerList2[i] = new Player(i+1);
+        }
+    }
 
     private void populatePicks(Player[] playerList, Pick[] picks) {
         for (int i=0; i<TEAM_SIZE; i++) {
             picks[i] = new Pick(playerList[i].banCharacter(), playerList[i].getPickOrder());
         }
     } //to fill picks1 and picks2 using the Players from playerList1 and playerList2 and the instance method banCharacter
-
 
     public Pick[] getTeam1() {
         return picks1;
