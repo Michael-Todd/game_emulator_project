@@ -97,7 +97,7 @@ public class BanDecisions {
     }
     public void printBannedCharacters(){
         for (Character bannedCharacter: bannedCharacters) {
-            System.out.println(bannedCharacter + " is banned.");
+            System.out.println(bannedCharacter.getName() + " is banned.");
         }
     }
 }
