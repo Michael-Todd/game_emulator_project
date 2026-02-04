@@ -1,4 +1,4 @@
-public class TeamBuilder { //class meant to group players together and determine ban votes
+public class TeamBuilder { //class "makes players", groups players together and has them select their bannedCharacter vote -- a team returned from an object here is a Pick consiting of the Character bannedCharacter each Player wishes to ban and that Player's pickorder
     private static final int TEAM_SIZE = 5;
     
     private Player[] playerList1 = new Player[TEAM_SIZE];
@@ -6,6 +6,7 @@ public class TeamBuilder { //class meant to group players together and determine
     private Pick[] picks1 = new Pick[TEAM_SIZE];
     private Pick[] picks2 = new Pick[TEAM_SIZE];
 
+    
     public TeamBuilder() {
 
         System.out.println("TeamBuilder running..");
@@ -19,15 +20,18 @@ public class TeamBuilder { //class meant to group players together and determine
         populatePicks(playerList2, picks2);
     }
 
+
     private void populatePicks(Player[] playerList, Pick[] picks) {
         for (int i=0; i<TEAM_SIZE; i++) {
             picks[i] = new Pick(playerList[i].banCharacter(), playerList[i].getPickOrder());
         }
     } //to fill picks1 and picks2 using the Players from playerList1 and playerList2 and the instance method banCharacter
 
+
     public Pick[] getTeam1() {
         return picks1;
     }
+
 
     public Pick[] getTeam2() {
         return picks2;
