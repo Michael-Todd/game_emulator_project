@@ -6,8 +6,6 @@ public class Player {
     private int pickOrder;
     private Character bannedCharacter;
 
-    
-
     /**
      * Constructs a Player object with a given pick order.
      * 
