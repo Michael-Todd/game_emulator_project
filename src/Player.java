@@ -17,7 +17,7 @@ public class Player {
     }
 
     /**
-     * Randomly selects a Character object using CharacterPool.
+     * Randomly selects and returns a Character object using CharacterPool.
      * 
      * @return the Character object that this Player votes to ban
      */
