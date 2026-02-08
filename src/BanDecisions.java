@@ -49,8 +49,8 @@ public class BanDecisions {
      * @param teamVotes the HashMap of ban votes as returned from tallyTeamVotes
      */
     private void findTeamBans(HashMap<Character, Integer> teamVotes) {
-        banMaxCharacter(teamVotes);
-        banMaxCharacter(teamVotes);
+        banTopVotedCharacter(teamVotes);
+        banTopVotedCharacter(teamVotes);
     }
 
     /**
@@ -58,7 +58,7 @@ public class BanDecisions {
      * 
      * @param teamVotes the HashMap of ban votes as returned from talleyTeamVotes
      */
-    private void banMaxCharacter(HashMap<Character, Integer> teamVotes) {
+    private void banTopVotedCharacter(HashMap<Character, Integer> teamVotes) {
         Integer max = 0;
         Character maxCharacter = null;
 
