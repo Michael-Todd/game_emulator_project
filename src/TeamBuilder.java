@@ -16,16 +16,16 @@ public class TeamBuilder {
      */
     public TeamBuilder() {
 
-        makeTeam();
+        makeTeams();
 
         populatePicks(playerList1, picks1);
         populatePicks(playerList2, picks2);
     }
 
     /**
-     * Contains the logic to construct an array of Player objects, the Players that make up a team.
+     * Contains the logic to construct an two arrays of Player objects, each made up of the Players that form a team.
      */
-    private void makeTeam() {
+    private void makeTeams() {
         for (int i=0; i<TEAM_SIZE; i++) {
             playerList1[i] = new Player(i+1);
             playerList2[i] = new Player(i+1);
