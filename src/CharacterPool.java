@@ -1,5 +1,9 @@
 import java.util.Random;
 
+/**
+ * Represents the set of playable characters in the videogame.
+ * Static class that stores and returns Characters.
+ */
 public class CharacterPool {
     
     private static final Character[] CHARACTERS = {
@@ -10,6 +14,11 @@ public class CharacterPool {
 
     private static Random rand = new Random();
 
+    /**
+     * Randomly returns a Character object.
+     * 
+     * @return a Character object from the set of playable characters
+     */
     public static Character getCharacter() {
 
         Character character = CHARACTERS[rand.nextInt(CHARACTERS.length)];
