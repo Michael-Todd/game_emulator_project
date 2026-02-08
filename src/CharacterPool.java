@@ -12,7 +12,7 @@ public class CharacterPool {
         new Character("char9"), new Character("char10"), new Character("char11"), new Character("char12")
     };
 
-    private static Random rand = new Random();
+    private static final Random rand = new Random();
 
     /**
      * Randomly returns a Character object.
