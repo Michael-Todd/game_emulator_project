@@ -37,13 +37,14 @@ This was built as a learning-focused Java project, emphasizing:
 - The method **does not accept a `Character` argument**, keeping player behavior self-contained.
 
 > The idea of passing a banned character into the constructor was explored, but was later abandoned due to the actual flow of decision-making within `BanDecisions`.
+> The idea of the `banCharacter()` method expecting a `Character` parameter was explored, but was later abandoned in favor of the above description to delegate to `CharacterPool`
 
 ---
 
 ### Team Separation
 
 - Players are split into **two arrays**, one per team.
-- A single combined list of all players was intentionally avoided.
+- Having a single combined list of all players was intentionally abandoned.
 - This allows:
   - Symmetric handling of both teams
   - Cleaner vote tallying
@@ -60,12 +61,12 @@ If combining all players ever became necessary, appending the arrays would be ea
   - Assigns them to their respective team arrays
   - Handles the execution of player ban selections
 
-This decision was made because:
+The decision to have TeamBuilder handle several events internally was made because:
 - The project will **not scale beyond banning**
 - Players have no independent lifecycle outside this system
 - All logic exists solely to support the banning process
 
-If the project were larger in scope, this logic would be split into additional classes.
+If the scope of this project were beyond the banning process, this logic would be split into multiple classes.
 
 ---
 
