@@ -124,7 +124,17 @@ This behavior intentionally mirrors the game that inspired this system:
 ## Scope & Intent
 
 - This project is **not** a full game
-- It is **not** designed for extensibility or scalability
+- It is **not** designed for significant extensibility or scalability
 - Every class exists to support one goal: **character banning**
 
 This constraint is intentional and reflected in the design.
+
+---
+
+## Possible Future Extensions
+
+- Consider a boolean field for the `Character` class called 'banned' that is initialized to false but set to true in the event that `BanDecisions` bans that character
+  - This would effectively model the state of `Character` objects
+  - Not really necessary for the current scope of the project
+  - This would be useful if I ever wanted to simulate `Players` choosing which `Character` to play
+
