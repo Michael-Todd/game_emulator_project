@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project implements a **character banning system** inspired by a competitive multiplayer game that I play. Two teams of players independently vote to ban characters from a shared pool. The system tallies votes and determines which characters are banned per team.
+This project implements a **character banning process** inspired by a competitive MOBA video game that I play. Two teams of players independently vote to ban characters from a shared pool. The system tallies votes and determines which characters are banned per team.
 
 The **scope of this project is solely the banning mechanism**. All classes, objects, and design decisions are intentionally constrained to serve that single purpose.
 
