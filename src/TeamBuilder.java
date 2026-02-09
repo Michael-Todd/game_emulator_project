@@ -63,6 +63,10 @@ public class TeamBuilder {
     }
 }
 
-//note: through this design, the pick order is available through the array, so in that regard Player need not have a field for order (Pick[] arrays store their order)
-//but maybe there is value in a Player object storing its order still; for now, keep it -- it might be used in point tallying further down or something
-//also makes intent very clear -- it would be much less obvious if array index was used alone
+/*
+note: through this design, the pick order is available through the array, so in 
+that regard Player need not have a field for order (Pick[] arrays store their order)
+but maybe there is value in a Player object storing its order still; for now, keep it -- 
+it might be used in point tallying further down or something also makes intent very 
+clear -- it would be much less obvious if array index was used alone
+*/
