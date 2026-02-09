@@ -44,13 +44,12 @@ This was built as a learning-focused Java project, emphasizing:
 ### Team Separation
 
 - Players are split into **two arrays**, one per team.
-- Having a single combined list of all players was intentionally abandoned.
 - This allows:
   - Symmetric handling of both teams
   - Cleaner vote tallying
   - A more intuitive design
 
-If combining all players ever became necessary, appending the arrays would be easy.
+> Having a single combined list of all players was intentionally abandoned. If combining all players ever became necessary, appending the arrays would be easy.
 
 ---
 
@@ -66,7 +65,7 @@ The decision to have TeamBuilder handle several events internally was made becau
 - Players have no independent lifecycle outside this system
 - All logic exists solely to support the banning process
 
-If the scope of this project were beyond the banning process, this logic would be split into multiple classes.
+> If the scope of this project were beyond the banning process, this logic would be split into multiple classes.
 
 ---
 
