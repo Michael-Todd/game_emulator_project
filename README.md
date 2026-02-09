@@ -19,7 +19,7 @@ This was built as a learning-focused Java project, emphasizing:
 - Each **Player** selects a character to ban.
 - Players are divided into **two teams**.
 - Each team’s votes are tallied independently.
-- The two most-voted characters per team is banned.
+- The two most-voted characters per team are banned.
 - In the case of ties, the banned character is chosen randomly (this matches the banning functionality that I've observed from the game this project is inspired by).
 
 ---
