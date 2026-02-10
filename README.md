@@ -147,6 +147,8 @@ This is acceptable because:
 - They are not exposed or reused elsewhere
 - Their only purpose is to aid in determining bans
 
+> Initially, an ArrayList object internally held the banned characters; the type was later switched to LinkedHashSet in order to prevent duplicate insertions
+
 ---
 
 ### Pick Objects
