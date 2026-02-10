@@ -42,7 +42,8 @@ This project was built as a **learning-focused Java project**, with emphasis on:
 
 ## Example Output
 
-```From the first team, ban pick 1 is char5
+```
+From the first team, ban pick 1 is char5
 From the first team, ban pick 2 is char2
 From the first team, ban pick 3 is char8
 From the first team, ban pick 4 is char5
@@ -59,7 +60,8 @@ From the second team, ban pick 5 is char12
 char5 is banned.
 char2 is banned.
 char3 is banned.
-char6 is banned.```
+char6 is banned.
+```
 
 
 ---
