@@ -128,8 +128,8 @@ This consolidation was intentional because:
 > This avoids a prior issue where:
 > * Characters were generated from strings
 > * Multiple `Character` objects could unintentionally represent the same character
-
-Now:
+>
+>Now:
 > * Each character exists exactly once
 > * Equality and identity are unambiguous
 
