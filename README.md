@@ -2,11 +2,11 @@
 
 ## Overview
 
-This project implements a **character banning process** inspired by a competitive MOBA video game that I play. Two teams of players independently vote to ban characters from a shared pool. The system tallies votes and determines which characters are banned per team.
+This project emulates a **character banning process** inspired by a competitive MOBA video game that I play. Two teams of players independently vote to ban characters from a common pool. The system tallies votes and determines which characters are banned per team.
 
-The **scope of this project is solely the banning mechanism**. All classes, objects, and design decisions are intentionally constrained to serve that single purpose. This is **not a full game**.
+The **scope of this project is solely the banning mechanism**. All classes, objects, and design decisions are geared toward serving that single purpose -- this is not a full game.
 
-This project was built as a **learning-focused Java project**, with emphasis on:
+This project was built as a **learning-focused Java project** to showcase my general programming skills, focusing on:
 
 - Object modeling
 - Encapsulation and scope control
@@ -22,7 +22,7 @@ This project was built as a **learning-focused Java project**, with emphasis on:
 - Players are divided into **two teams**.
 - Each team’s votes are tallied independently.
 - The two most-voted characters per team are banned.
-- In the case of ties, the banned character is chosen randomly (mirroring the behavior observed in the game that inspired this system).
+- In the case of ties, the banned character is chosen randomly (this mirrors the behavior of the banning process in the game this project gleaned inspiration from).
 
 ---
 
@@ -32,7 +32,7 @@ This project was built as a **learning-focused Java project**, with emphasis on:
 |------|----------------|
 | `Player` | Stores pick order and votes for a character to ban. |
 | `Pick` | Record holding a player’s ban vote and pick order. |
-| `Character` | Represents a playable character by name. |
+| `Character` | Represents a playable character by its name. |
 | `CharacterPool` | Static pool of unique characters used throughout the project. |
 | `TeamBuilder` | Creates players, assigns teams, and gathers ban votes. |
 | `BanDecisions` | Tallies votes and determines banned characters. |
@@ -44,7 +44,7 @@ This project was built as a **learning-focused Java project**, with emphasis on:
 
 ```
 From the first team, ban pick 1 is char5
-From the first team, ban pick 2 is char2
+From the first team, ban pick 2 is char4
 From the first team, ban pick 3 is char8
 From the first team, ban pick 4 is char5
 From the first team, ban pick 5 is char1
@@ -63,20 +63,19 @@ char3 is banned.
 char6 is banned.
 ```
 
-
 ---
 
 ## Skills Demonstrated
 
-- **Java & Object-Oriented Programming**: Encapsulation, records, and clear separation of responsibilities  
+- **Java & Object-Oriented Programming**: Encapsulation, records, and separation of responsibilities  
 - **Data Structures & Aggregation**: Arrays, HashMaps, Sets, and vote tallying logic  
-- **Modeling Structured Data**: Representing players, teams, and votes with intentional constraints  
+- **Modeling Structured Data**: Representing players, teams, votes, and events with intentional constraints  
 - **Decision-Making Logic**: Random selection, tie handling, and controlled mutation  
-- **Code Documentation**: Javadocs and README explanations focused on intent and tradeoffs  
+- **Code Documentation**: Javadocs and README explanations focused on intent and scope-related tradeoffs  
 
 ---
 
-## Project Structure & Design Decisions
+## Design Decisions
 
 ### Player Design
 
@@ -89,7 +88,7 @@ char6 is banned.
 - The method **does not accept a `Character` argument**, keeping player behavior self-contained.
 
 > The idea of passing a banned character into the constructor was explored but abandoned due to the actual flow of decision-making within `BanDecisions`.  
-> Similarly, having `banCharacter()` accept a `Character` parameter was abandoned in favor of delegating that responsibility to `CharacterPool`.
+> Similarly, having `banCharacter()` accept a `Character` parameter was abandoned in favor of that responsibility being handled by `CharacterPool`.
 
 ---
 
@@ -99,9 +98,9 @@ char6 is banned.
 - This allows:
   - Symmetric handling of both teams
   - Cleaner vote tallying
-  - A more intuitive mental model
+  - A model closer to the true structure
 
-> A single combined list of players was intentionally abandoned. If combining teams ever became necessary, appending the arrays would be trivial.
+> A single combined list of players was abandoned. If combining teams ever became necessary in future extensions, appending the arrays would be simple.
 
 ---
 
@@ -114,7 +113,7 @@ char6 is banned.
 
 This consolidation was intentional because:
 - The project will **not scale beyond banning**
-- Players have no independent lifecycle
+- Players have no independent lifecycle due to scope of project
 - All logic exists solely to support the banning process
 
 > If the project scope expanded, this responsibility would likely be split across multiple classes.
@@ -126,13 +125,13 @@ This consolidation was intentional because:
 - `CharacterPool` creates **exactly 12 distinct `Character` objects**
 - These objects are reused throughout the project
 
-This avoids a prior issue where:
-- Characters were generated from strings
-- Multiple `Character` objects unintentionally represented the same character
+> This avoids a prior issue where:
+> * Characters were generated from strings
+> * Multiple `Character` objects could unintentionally represent the same character
 
-Now:
-- Each character exists exactly once
-- Equality and identity are unambiguous
+> Now:
+> * Each character exists exactly once
+> * Equality and identity are unambiguous
 
 ---
 
