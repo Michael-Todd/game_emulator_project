@@ -129,7 +129,7 @@ This consolidation was intentional because:
 > * Characters were generated from strings
 > * Multiple `Character` objects could unintentionally represent the same character
 
-> Now:
+Now:
 > * Each character exists exactly once
 > * Equality and identity are unambiguous
 
@@ -143,7 +143,7 @@ This consolidation was intentional because:
 - These maps are **intentionally mutated** during processing (the most-voted character is removed after each ban)
 
 This is acceptable because:
-- The maps exist solely within `BanDecisions`
+- The maps exist only within `BanDecisions`
 - They are not exposed or reused elsewhere
 - Their only purpose is to aid in determining bans
 
@@ -153,7 +153,7 @@ This is acceptable because:
 
 - `Pick[]` objects are used throughout `TeamBuilder` and `BanDecisions`
 - While `pickOrder` is **not currently used for tie-breaking**, it is intentionally preserved to allow:
-  - Future tie-resolution logic
+  - Possible future tie-resolution logic
   - Expansion without refactoring core structures
 
 ---
@@ -164,17 +164,17 @@ This is acceptable because:
   - If all 5 players on a team vote for the same character, that character is banned
 - For all other ties:
   - The banned character is chosen randomly
-  - This results from iterating over the internal `HashMap`
+  - This is a result of iterating over the internal `HashMap` that stores the tallying results
 
 This behavior intentionally mirrors the game that inspired this system:
 
-> Any character with the highest vote count may be banned, and ties are resolved randomly.
+> Any character with the highest and second-highest vote count is banned, and ties are resolved randomly.
 
 ---
 
 ## Scope & Intent
 
-- This project is **not a full game**
+- This project is **not a full-game simulation**
 - It is **not designed for large-scale extensibility**
 - Every class exists to support a single goal: **character banning**
 
